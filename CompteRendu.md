@@ -22,53 +22,56 @@
 
 # Programmation BASH
 ## Exercice 2
-`#!/bin/bash
+`
+    #!/bin/bash
 
-read -s pass
-if [ $pass = "123456+Aze" ]; then
-	echo "Mot de passe correct"
-else 
-	echo "Mot de passe incorrect"
-fi
+    read -s pass
+    if [ $pass = "123456+Aze" ]; then
+        echo "Mot de passe correct"
+    else 
+        echo "Mot de passe incorrect"
+    fi
 `
 
 ## Exercice 3
-`#!/bin/bash
+`
+    #!/bin/bash
 
-function is_number()
-{
-	re='^[+-]?[0-9]+([.][0-9]+)?$'
+    function is_number()
+    {
+        re='^[+-]?[0-9]+([.][0-9]+)?$'
 
-	if ! [[ $1 =~ $re ]] ; then
-		return 1
-	else
-		return 0
-	fi
-}
+        if ! [[ $1 =~ $re ]] ; then
+            return 1
+        else
+            return 0
+        fi
+    }
 
-read -p 'Saisir un nombre réel : ' number
+    read -p 'Saisir un nombre réel : ' number
 
-is_number $number
+    is_number $number
 
-if [ $? = 1 ]; then
-	echo "Erreur, ce n'est pas un nombre réel"
-fi
+    if [ $? = 1 ]; then
+        echo "Erreur, ce n'est pas un nombre réel"
+    fi
 `
 
 ## Exercice 4
-`#!/bin/bash
+`
+    #!/bin/bash
 
-function exist()
-{
-	userExist=$(getent passwd $1)
-	if [[ $userExist = "" || $1 = "" ]]; then
-		echo -e "\nUtilisation : $0 nom_utilisateur"
-	elif ! [ userExist = -z ]; then
-		echo -e "\nL'utilisateur $(getent passwd $1) existe "
-	fi
-}
+    function exist()
+    {
+        userExist=$(getent passwd $1)
+        if [[ $userExist = "" || $1 = "" ]]; then
+            echo -e "\nUtilisation : $0 nom_utilisateur"
+        elif ! [ userExist = -z ]; then
+            echo -e "\nL'utilisateur $(getent passwd $1) existe "
+        fi
+    }
 
-exist $1
+    exist $1
 `
 
 ## Exercice 5
