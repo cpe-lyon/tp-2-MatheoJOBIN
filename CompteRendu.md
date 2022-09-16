@@ -75,7 +75,6 @@
 `
 
 ## Exercice 5
-``
 
 ## Exercice 6
 
